@@ -41,10 +41,43 @@ class Printer
      * @param string $message
      * @return void
      */
-    public static function display(string $message): void
+    private static function display(string $message): void
     {
         self::newLine();
         self::out($message);
         self::newLine();
+    }
+
+    /**
+     * Success message
+     *
+     * @param string $message
+     * @return void
+     */
+    public static function success(string $message): void
+    {
+        self::display((Colors::GREEN)->color() . $message . "\e[0m");
+    }
+
+    /**
+     * Error message
+     *
+     * @param string $message
+     * @return void
+     */
+    public static function error(string $message): void
+    {
+        self::display((Colors::RED)->color() . $message . "\e[0m\n");
+    }
+
+    /**
+     * Info message
+     *
+     * @param string $message
+     * @return void
+     */
+    public static function info(string $message): void
+    {
+        self::display((Colors::YELLOW)->color() . $message . "\e[0m");
     }
 }
