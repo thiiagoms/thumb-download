@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+error_reporting(E_ERROR | E_PARSE);
+
+if (php_sapi_name() !== 'cli') {
+    echo "<h1>Only in CLI mode</h1>";
+    exit;
+}
+
+require_once __DIR__ . '/autoload.php';
+
+use Src\Commands\{BannerCommand, VideoCommand};
+
+BannerCommand::banner();
+
+if (isset($argv[1]) && in_array($argv[1], ['-h', '--help', '-help'])) {
+    return BannerCommand::help();
+}
+
+$url = readline("> Youtube URL: ");
+$video = new VideoCommand($url);
+echo "Your Code: {$video->downloadThumb()}\n";
