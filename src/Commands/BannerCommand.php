@@ -6,6 +6,13 @@ namespace Src\Commands;
 
 use Src\Utils\Printer;
 
+/**
+ * Printer Command
+ * 
+ * @package Src\Commands
+ * @author  Thiago Silva <thiagom.devsec@gmail.com>
+ * @version 1.0
+ */
 class BannerCommand
 {
 
@@ -16,7 +23,7 @@ class BannerCommand
      */
     public static function banner(): void
     {
-        Printer::display("
+        Printer::info("
         ████████ ██   ██ ██    ██ ███    ███ ██████  
            ██    ██   ██ ██    ██ ████  ████ ██   ██ 
            ██    ███████ ██    ██ ██ ████ ██ ██████  
@@ -25,12 +32,22 @@ class BannerCommand
         ");
     }
 
+    /**
+     * Display help command
+     *
+     * @return void
+     */
     public static function help(): void
     {
-        Printer::display("
+        Printer::info("
             $ ./thumb
-                > YouTube url: https://www.youtube.com/watch?v=OK_JCtrrv-c
-            $
+
+                > Enter with your YouTube url: https://www.youtube.com/watch?v=OK_JCtrrv-c
+
+            [*] Downloading thumb
+
+            > URL code: OK_JCtrrv-c
+            > Check your files inside assets/OK_JCtrrv-c/
         ");
     }
 }
