@@ -2,15 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Src\Utils;
+namespace Thiiagoms\Thumb\Utils;
 
-/**
- * Colors packge
- * 
- * @package Src\Utils
- * @author  Thiago Silva <thiagom.devsec@gmail.com>
- * @version 1.0
- */
 enum Colors
 {
     case GREEN;

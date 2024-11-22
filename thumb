@@ -3,23 +3,32 @@
 
 declare(strict_types=1);
 
-error_reporting(E_ERROR | E_PARSE);
+use Thiiagoms\Thumb\App;
+use Thiiagoms\Thumb\Utils\Banner;
+use Thiiagoms\Thumb\Utils\Printer;
 
 if (php_sapi_name() !== 'cli') {
-    echo "<h1>Only in CLI mode</h1>";
+    echo '<h1>Only in CLI mode</h1>';
     exit;
 }
 
-require_once __DIR__ . '/autoload.php';
+require __DIR__.'/bootstrap.php';
 
-use Src\Commands\{BannerCommand, VideoCommand};
-
-BannerCommand::banner();
+Banner::banner();
 
 if (isset($argv[1]) && in_array($argv[1], ['-h', '--help', '-help'])) {
-    return BannerCommand::help();
+    Banner::help();
+    exit;
 }
 
-$url = readline("> Youtube URL: ");
-$video = new VideoCommand($url);
-echo "Your Code: {$video->downloadThumb()}\n";
+$url = readline('👉Youtube URL: ');
+
+/** @var \DI\Container $container */
+$app = $container->get(App::class);
+
+$code = $app->with($url)->handle();
+
+Printer::success("
+    🎉Youtube code: {$code}
+    🚀Check you thumb under storage/images with Youtube code {$code}
+");

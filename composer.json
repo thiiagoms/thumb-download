@@ -1,0 +1,33 @@
+{
+  "name": "thiiagoms/thumb-download",
+  "description": "Download thumbnails of Youtube videos",
+  "authors": [
+    {
+      "name": "thiiagoms",
+      "email": "thiiagoms@proton.me",
+      "homepage": "https://github.com/thiiagoms"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Thiiagoms\\Thumb\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Thiiagoms\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11",
+    "laravel/pint": "^1.18"
+  },
+  "require": {
+    "php-di/php-di": "^7.0",
+    "ext-readline": "*"
+  },
+  "scripts": {
+    "lint": "pint",
+    "tests": "phpunit --testdox --testdox-text storage/logs/tests/report.txt tests"
+  }
+}

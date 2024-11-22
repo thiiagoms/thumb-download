@@ -1,7 +1,15 @@
-# Created by https://www.toptal.com/developers/gitignore/api/jetbrains+all,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=jetbrains+all,visualstudiocode
+# Created by https://www.toptal.com/developers/gitignore/api/phpunit,phpstorm+all,composer
+# Edit at https://www.toptal.com/developers/gitignore?templates=phpunit,phpstorm+all,composer
 
-### JetBrains+all ###
+### Composer ###
+composer.phar
+/vendor/
+
+# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock
+
+### PhpStorm+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
@@ -80,7 +88,7 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-### JetBrains+all Patch ###
+### PhpStorm+all Patch ###
 # Ignore everything but code style settings and run configurations
 # that are supposed to be shared within teams.
 
@@ -89,29 +97,22 @@ fabric.properties
 !.idea/codeStyles
 !.idea/runConfigurations
 
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+### PHPUnit ###
+# Covers PHPUnit
+# Reference: https://phpunit.de/
 
-# Local History for Visual Studio Code
-.history/
+# Generated files
+.phpunit.result.cache
+.phpunit.cache
 
-# Built Visual Studio Code Extensions
-*.vsix
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
 
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-.ionide
+# Build data
+/build/
 
-# Support for Project snippet scope
-.vscode/*.code-snippets
+# Storage
+/storage/**/*/
 
-# Ignore code-workspaces
-*.code-workspace
-
-# End of https://www.toptal.com/developers/gitignore/api/jetbrains+all,visualstudiocode
+# End of https://www.toptal.com/developers/gitignore/api/phpunit,phpstorm+all,composer
