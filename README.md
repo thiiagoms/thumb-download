@@ -60,15 +60,6 @@ root@fced9d42c466:/var/www# ./thumb
 [*] Download your favorite Youtube thumbnails
 👉Youtube URL
 ```
-## Authors
-
-- [@thiiagoms](https://www.github.com/thiiagoms)
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
 
 ## Running Test
 
@@ -82,13 +73,3 @@ root@fced9d42c466:/var/www# composer tests
 ```bash
 root@fced9d42c466:/var/www# composer lint
 ```
-
-
-## Tech Stack
-
-**Client:** React, Redux, TailwindCSS
-
-**Server:** Node, Express
-
-
-
