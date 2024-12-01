@@ -30,7 +30,7 @@ $ cd thumb
 ```bash
 thumb $ docker compose up -d 
 thumb $ docker compose exec app bash
-root@fced9d42c466:/var/www# compose install
+root@fced9d42c466:/var/www# composer install
 ```
 
 4. Execute `thumb`
